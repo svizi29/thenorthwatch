@@ -8,7 +8,7 @@
 <meta property="og:title" content="The North Watch — Indie Game Studio">
 <meta property="og:description" content="An independent game studio from Slovenia, making small, sharp games for mobile.">
 <meta property="og:type" content="website">
-<link rel="icon" href="spacetanks.png">
+<link rel="icon" href="logo.svg">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   :root {
@@ -29,8 +29,12 @@
            background:rgba(7,11,16,.78); border-bottom:1px solid var(--line); }
   .nav { display:flex; align-items:center; justify-content:space-between; gap:16px;
          max-width:960px; margin:0 auto; padding:14px 24px; }
-  .brand { font-weight:700; letter-spacing:.02em; text-decoration:none; color:var(--ink); }
+  .brand { font-weight:700; letter-spacing:.02em; text-decoration:none; color:var(--ink);
+           display:flex; align-items:center; gap:10px; }
   .brand span { color:var(--accent); }
+  .crest-sm { height:30px; width:auto; display:block; }
+  .crest-hero { width:132px; height:auto; display:block; margin-bottom:26px;
+                filter:drop-shadow(0 6px 26px rgba(91,217,255,.28)); }
   .nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.95rem; }
   .nav a { text-decoration:none; color:var(--dim); }
   .nav a:hover { color:var(--ink); }
@@ -84,7 +88,7 @@
 
 <header>
   <nav class="nav">
-    <a class="brand" href="index.html">THE NORTH <span>WATCH</span></a>
+    <a class="brand" href="index.html"><img src="logo.svg" alt="" class="crest-sm">THE NORTH <span>WATCH</span></a>
     <ul>
       <li><a href="#games">Games</a></li>
       <li><a href="#about">About</a></li>
@@ -95,6 +99,7 @@
 
 <div class="hero">
   <div class="hero-inner">
+    <img src="logo.svg" alt="The North Watch crest" class="crest-hero">
     <p class="eyebrow">Independent game studio · Slovenia</p>
     <h1>Small games,<br>made carefully.</h1>
     <p class="lede">The North Watch is a one-person studio building sharp, self-contained games for
