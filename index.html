@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The North Watch — Indie Game Studio</title>
+<meta name="description" content="The North Watch is an independent game studio from Slovenia, making small, sharp games for mobile.">
+<meta property="og:title" content="The North Watch — Indie Game Studio">
+<meta property="og:description" content="An independent game studio from Slovenia, making small, sharp games for mobile.">
+<meta property="og:type" content="website">
+<link rel="icon" href="spacetanks.png">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --bg:#070b10; --panel:#0e161f; --line:#1c2836;
+    --ink:#e8eef5; --dim:#8fa0b3; --accent:#5bd9ff; --accent2:#8affc1;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+
+  /* header */
+  header { position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
+           background:rgba(7,11,16,.78); border-bottom:1px solid var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; gap:16px;
+         max-width:960px; margin:0 auto; padding:14px 24px; }
+  .brand { font-weight:700; letter-spacing:.02em; text-decoration:none; color:var(--ink); }
+  .brand span { color:var(--accent); }
+  .nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.95rem; }
+  .nav a { text-decoration:none; color:var(--dim); }
+  .nav a:hover { color:var(--ink); }
+
+  /* hero */
+  .hero { position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero::before {
+    content:""; position:absolute; inset:-40% -20% auto -20%; height:120%;
+    background:radial-gradient(ellipse at 30% 0%, rgba(91,217,255,.16), transparent 60%),
+               radial-gradient(ellipse at 80% 20%, rgba(138,255,193,.10), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-inner { position:relative; padding:96px 24px 84px; max-width:960px; margin:0 auto; }
+  .eyebrow { color:var(--accent); font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; margin:0 0 14px; }
+  h1 { font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.1; margin:0 0 18px; letter-spacing:-.02em; }
+  .lede { font-size:clamp(1.05rem,2.2vw,1.25rem); color:var(--dim); max-width:52ch; margin:0; }
+
+  /* sections */
+  section { padding:72px 0; border-bottom:1px solid var(--line); }
+  h2 { font-size:1.5rem; margin:0 0 8px; letter-spacing:-.01em; }
+  .sub { color:var(--dim); margin:0 0 32px; }
+
+  /* games */
+  .game { display:flex; gap:24px; align-items:flex-start; background:var(--panel);
+          border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .game img { width:104px; height:104px; border-radius:22%; flex:none; display:block;
+              box-shadow:0 8px 30px rgba(91,217,255,.18); }
+  .game h3 { margin:0 0 6px; font-size:1.2rem; }
+  .game p { margin:0 0 12px; color:var(--dim); }
+  .pill { display:inline-block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+          color:var(--accent2); border:1px solid rgba(138,255,193,.35);
+          border-radius:999px; padding:3px 11px; }
+
+  /* about grid */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .card h3 { margin:0 0 6px; font-size:1rem; color:var(--accent); }
+  .card p { margin:0; color:var(--dim); font-size:.95rem; }
+
+  footer { padding:40px 0 64px; color:var(--dim); font-size:.9rem; }
+  .footlinks { display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
+
+  @media (max-width:560px) {
+    .nav ul { gap:14px; }
+    .game { flex-direction:column; }
+    .game img { width:84px; height:84px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html">THE NORTH <span>WATCH</span></a>
+    <ul>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Independent game studio · Slovenia</p>
+    <h1>Small games,<br>made carefully.</h1>
+    <p class="lede">The North Watch is a one-person studio building sharp, self-contained games for
+      mobile — the kind you can pick up for three minutes and still think about later.</p>
+  </div>
+</div>
+
+<section id="games">
+  <div class="wrap">
+    <h2>Games</h2>
+    <p class="sub">What we're shipping right now.</p>
+
+    <div class="game">
+      <img src="spacetanks.png" alt="Space Tanks Mayhem icon">
+      <div>
+        <h3>Space Tanks Mayhem</h3>
+        <p>Arena survival tank combat across alien battlefields. Endless waves, a full arsenal,
+           and environments that fall apart around you.</p>
+        <span class="pill">Coming soon — iOS &amp; Android</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="sub">A small studio with a narrow focus.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Independent</h3>
+        <p>Self-funded and self-published, based in Cerklje na Gorenjskem, Slovenia.</p>
+      </div>
+      <div class="card">
+        <h3>Mobile first</h3>
+        <p>Built for phones and tablets — short sessions, one-hand controls, no account required.</p>
+      </div>
+      <div class="card">
+        <h3>Fair by default</h3>
+        <p>Ads keep the games free, and a single purchase removes them for good. No dark patterns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="sub">Press, feedback, or a bug to report — all welcome.</p>
+    <p><a href="mailto:gasper.jager@gmail.com">gasper.jager@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footlinks">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:gasper.jager@gmail.com">Email</a>
+    </div>
+    © 2026 The North Watch — Gasper Jager s.p., Slovenia
+  </div>
+</footer>
+
+</body>
+</html>
