@@ -59,7 +59,10 @@
 
   /* games */
   .game { display:flex; gap:24px; align-items:flex-start; background:var(--panel);
-          border:1px solid var(--line); border-radius:14px; padding:22px; }
+          border:1px solid var(--line); border-radius:14px; padding:22px;
+          text-decoration:none; color:inherit; transition:border-color .15s ease, transform .15s ease; }
+  a.game:hover { border-color:rgba(91,217,255,.45); transform:translateY(-2px); }
+  .game h3 { color:var(--ink); }
   .game img { width:104px; height:104px; border-radius:22%; flex:none; display:block;
               box-shadow:0 8px 30px rgba(91,217,255,.18); }
   .game h3 { margin:0 0 6px; font-size:1.2rem; }
@@ -91,6 +94,7 @@
     <a class="brand" href="index.html"><img src="logo.svg" alt="" class="crest-sm">THE NORTH <span>WATCH</span></a>
     <ul>
       <li><a href="#games">Games</a></li>
+      <li><a href="space-tanks-mayhem.html">Space Tanks</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="support.html">Support</a></li>
     </ul>
@@ -112,15 +116,15 @@
     <h2>Games</h2>
     <p class="sub">What we're shipping right now.</p>
 
-    <div class="game">
+    <a class="game" href="space-tanks-mayhem.html">
       <img src="spacetanks.png" alt="Space Tanks Mayhem icon">
       <div>
         <h3>Space Tanks Mayhem</h3>
         <p>Arena survival tank combat across alien battlefields. Endless waves, a full arsenal,
            and environments that fall apart around you.</p>
-        <span class="pill">Coming soon — iOS &amp; Android</span>
+        <span class="pill">Out now on the App Store</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -149,7 +153,7 @@
   <div class="wrap">
     <h2>Contact</h2>
     <p class="sub">Press, feedback, or a bug to report — all welcome.</p>
-    <p><a href="mailto:gasper.jager@gmail.com">gasper.jager@gmail.com</a></p>
+    <p><a href="mailto:support@thenorthwatch.eu">support@thenorthwatch.eu</a></p>
   </div>
 </section>
 
@@ -158,9 +162,9 @@
     <div class="footlinks">
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="mailto:gasper.jager@gmail.com">Email</a>
+      <a href="mailto:support@thenorthwatch.eu">Email</a>
     </div>
-    © 2026 The North Watch — Gasper Jager s.p., Slovenia
+    © 2026 The North Watch — Slovenia
   </div>
 </footer>
 

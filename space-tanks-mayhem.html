@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Tanks Mayhem — The North Watch</title>
+<meta name="description" content="Arena survival tank combat across alien battlefields. Endless waves, a full arsenal, and environments that fall apart around you. Free on the App Store.">
+<meta property="og:title" content="Space Tanks Mayhem">
+<meta property="og:description" content="Arena survival tank combat across alien battlefields. Free on the App Store.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thenorthwatch.eu/media/stm-1.png">
+<link rel="icon" href="logo.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --bg:#070b10; --panel:#0e161f; --line:#1c2836;
+    --ink:#e8eef5; --dim:#8fa0b3; --accent:#5bd9ff; --accent2:#8affc1;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+
+  /* header — matches index.html */
+  header { position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
+           background:rgba(7,11,16,.78); border-bottom:1px solid var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; gap:16px;
+         max-width:960px; margin:0 auto; padding:14px 24px; }
+  .brand { font-weight:700; letter-spacing:.02em; text-decoration:none; color:var(--ink);
+           display:flex; align-items:center; gap:10px; }
+  .brand span { color:var(--accent); }
+  .crest-sm { height:30px; width:auto; display:block; }
+  .nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.95rem; }
+  .nav a { text-decoration:none; color:var(--dim); }
+  .nav a:hover { color:var(--ink); }
+
+  /* hero */
+  .hero { position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero::before {
+    content:""; position:absolute; inset:-40% -20% auto -20%; height:130%;
+    background:radial-gradient(ellipse at 25% 0%, rgba(91,217,255,.16), transparent 60%),
+               radial-gradient(ellipse at 85% 25%, rgba(138,255,193,.10), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-inner { position:relative; padding:72px 24px 64px; max-width:960px; margin:0 auto;
+                display:flex; gap:32px; align-items:center; flex-wrap:wrap; }
+  .hero-icon { width:128px; height:128px; border-radius:22%; flex:none; display:block;
+               box-shadow:0 10px 40px rgba(91,217,255,.22); }
+  .hero-copy { flex:1 1 380px; min-width:280px; }
+  .eyebrow { color:var(--accent); font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; margin:0 0 12px; }
+  h1 { font-size:clamp(2rem,5.4vw,3.1rem); line-height:1.1; margin:0 0 14px; letter-spacing:-.02em; }
+  .lede { font-size:clamp(1.02rem,2.1vw,1.18rem); color:var(--dim); max-width:54ch; margin:0 0 24px; }
+
+  .cta { display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+         background:var(--accent); color:#04121a; font-weight:650; font-size:1rem;
+         padding:12px 22px; border-radius:10px; border:1px solid rgba(91,217,255,.5);
+         transition:transform .12s ease, box-shadow .12s ease; }
+  .cta:hover { transform:translateY(-1px); box-shadow:0 8px 26px rgba(91,217,255,.28); }
+  .meta { margin:16px 0 0; color:var(--dim); font-size:.9rem; }
+
+  /* sections */
+  section { padding:64px 0; border-bottom:1px solid var(--line); }
+  h2 { font-size:1.5rem; margin:0 0 8px; letter-spacing:-.01em; }
+  .sub { color:var(--dim); margin:0 0 30px; }
+
+  /* shots */
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  .shots figure { margin:0; }
+  .shots img { width:100%; height:auto; display:block; border-radius:10px;
+               border:1px solid var(--line); background:#000; }
+  .shots figcaption { color:var(--dim); font-size:.85rem; margin-top:8px; }
+
+  /* feature grid */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .card h3 { margin:0 0 6px; font-size:1rem; color:var(--accent); }
+  .card p { margin:0; color:var(--dim); font-size:.95rem; }
+
+  /* facts table */
+  .facts { width:100%; border-collapse:collapse; font-size:.95rem; }
+  .facts th, .facts td { text-align:left; padding:11px 0; border-bottom:1px solid var(--line);
+                         vertical-align:top; }
+  .facts th { color:var(--dim); font-weight:500; width:40%; }
+  .facts tr:last-child th, .facts tr:last-child td { border-bottom:none; }
+
+  .pill { display:inline-block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+          color:var(--accent2); border:1px solid rgba(138,255,193,.35);
+          border-radius:999px; padding:3px 11px; }
+
+  footer { padding:40px 0 64px; color:var(--dim); font-size:.9rem; }
+  .footlinks { display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
+
+  @media (max-width:560px) {
+    .nav ul { gap:14px; }
+    .hero-inner { padding:52px 24px 48px; gap:22px; }
+    .hero-icon { width:96px; height:96px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="logo.svg" alt="" class="crest-sm">THE NORTH <span>WATCH</span></a>
+    <ul>
+      <li><a href="index.html#games">Games</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="spacetanks.png" alt="Space Tanks Mayhem app icon" class="hero-icon">
+    <div class="hero-copy">
+      <p class="eyebrow">Out now · iPhone &amp; iPad</p>
+      <h1>Space Tanks Mayhem</h1>
+      <p class="lede">The battalion has been hacked. You are the last tank still taking orders from a
+        human. Hold the line across five alien battlefields, one wave at a time.</p>
+      <a class="cta" href="https://apps.apple.com/app/id6756101193">Download free on the App Store</a>
+      <p class="meta">Free · In-app purchases · Rated 9+ · Requires iOS 15 or later</p>
+    </div>
+  </div>
+</div>
+
+<section id="shots">
+  <div class="wrap">
+    <h2>Screenshots</h2>
+    <p class="sub">Captured in-game on iPhone.</p>
+    <div class="shots">
+      <figure>
+        <img src="media/stm-1.png" alt="Player tank engaging three enemy tanks on the lunar arena" loading="lazy">
+        <figcaption>Wave one on the Lunar arena — three hostiles, one hull.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/stm-2.png" alt="Two enemy tanks closing in across open lunar ground" loading="lazy">
+        <figcaption>Every hostile is named and its health tracked. So is yours.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/stm-3.png" alt="Wave complete banner after clearing an arena" loading="lazy">
+        <figcaption>Clear the wave, catch your breath, brace for a bigger one.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/stm-4.png" alt="Hyperspace jump transition between sectors" loading="lazy">
+        <figcaption>Hyperspace jump — each sector is a new world.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/stm-5.png" alt="Four hostiles and scattered pickups on the Mars battlefield" loading="lazy">
+        <figcaption>Sector two: Mars. Four hostiles, and cover that does not last.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/stm-6.png" alt="Tracer fire and debris around the player tank at close range" loading="lazy">
+        <figcaption>Nitro dash in, fire on the roll, boost back out.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="about-game">
+  <div class="wrap">
+    <h2>What it is</h2>
+    <p class="sub">Arena survival tank combat — three minutes at a time.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Endless waves</h3>
+        <p>Every wave adds another hostile. Scouts flank, heavies soak damage, dual-guns punish
+           you for standing still.</p>
+      </div>
+      <div class="card">
+        <h3>Five battlefields</h3>
+        <p>Lunar, Mars, Ice, Toxic and Alien sectors — each with its own light, terrain and cover.</p>
+      </div>
+      <div class="card">
+        <h3>A real arsenal</h3>
+        <p>Main gun, grenades, a nitro dash and a boost hop. Learn to use all four or you will
+           not see wave five.</p>
+      </div>
+      <div class="card">
+        <h3>Destructible cover</h3>
+        <p>The rocks and wrecks you hide behind come apart under fire. Position is temporary.</p>
+      </div>
+      <div class="card">
+        <h3>One-hand controls</h3>
+        <p>A floating stick under your left thumb, action buttons under your right. No tutorial
+           needed.</p>
+      </div>
+      <div class="card">
+        <h3>No account, no waiting</h3>
+        <p>Open it and play. Nothing to sign up for, nothing to sync, no energy timer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <h2>The setup</h2>
+    <p class="sub">Rogue Battalion.</p>
+    <p style="max-width:62ch; color:var(--dim); margin:0;">
+      A command AI went rogue and took every tank in the fleet with it. Yours held. The mission is
+      the oldest one there is: survive, reach the data core, and take back one sector at a time.
+      Between waves the AI talks to you. It is not encouraging.
+    </p>
+  </div>
+</section>
+
+<section id="details">
+  <div class="wrap">
+    <h2>Details</h2>
+    <p class="sub">The practical stuff.</p>
+    <table class="facts">
+      <tr><th>Platform</th><td>iPhone and iPad · iOS 15 or later<br><span class="pill" style="margin-top:8px">Android coming soon</span></td></tr>
+      <tr><th>Price</th><td>Free to play</td></tr>
+      <tr><th>In-app purchases</th><td>Remove Ads ($2.99, one-time) · Revive Instantly ($0.49)</td></tr>
+      <tr><th>Age rating</th><td>9+</td></tr>
+      <tr><th>Genre</th><td>Action · Arcade · Arena survival</td></tr>
+      <tr><th>Developer</th><td>The North Watch, Slovenia</td></tr>
+      <tr><th>Support</th><td><a href="support.html">Support page</a> · <a href="privacy.html">Privacy policy</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="press">
+  <div class="wrap">
+    <h2>Press</h2>
+    <p class="sub">Screenshots on this page are free to use in coverage of the game.</p>
+    <p style="margin:0;"><a href="mailto:support@thenorthwatch.eu">support@thenorthwatch.eu</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footlinks">
+      <a href="index.html">Studio</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:support@thenorthwatch.eu">Email</a>
+    </div>
+    © 2026 The North Watch — Slovenia
+  </div>
+</footer>
+
+</body>
+</html>
