@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Trails: Snake Arena — The North Watch</title>
+<meta name="description" content="A snake game with rockets. Grow your trail, dodge everything, and play up to six over local Wi-Fi. Coming soon to the App Store.">
+<meta property="og:title" content="Space Trails: Snake Arena">
+<meta property="og:description" content="A snake game with rockets. Grow your trail, dodge everything, and play up to six over local Wi-Fi.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thenorthwatch.eu/media/st-hero.jpg">
+<link rel="icon" href="logo.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --bg:#070b10; --panel:#0e161f; --line:#1c2836;
+    --ink:#e8eef5; --dim:#8fa0b3; --accent:#5bd9ff; --accent2:#8affc1;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+
+  /* header — matches index.html */
+  header { position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
+           background:rgba(7,11,16,.78); border-bottom:1px solid var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; gap:16px;
+         max-width:960px; margin:0 auto; padding:14px 24px; }
+  .brand { font-weight:700; letter-spacing:.02em; text-decoration:none; color:var(--ink);
+           display:flex; align-items:center; gap:10px; }
+  .brand span { color:var(--accent); }
+  .crest-sm { height:30px; width:auto; display:block; }
+  .nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.95rem; }
+  .nav a { text-decoration:none; color:var(--dim); }
+  .nav a:hover { color:var(--ink); }
+
+  /* key art strip — capped so it reads as a banner. At full 16:9 it eats more
+     than a desktop viewport and pushes the title and CTA below the fold. */
+  .keyart { display:block; width:100%; height:min(46vh,420px); object-fit:cover;
+            object-position:center 22%; border-bottom:1px solid var(--line); }
+  @media (max-width:700px) { .keyart { height:min(34vh,260px); } }
+
+  /* hero */
+  .hero { position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero::before {
+    content:""; position:absolute; inset:-40% -20% auto -20%; height:130%;
+    background:radial-gradient(ellipse at 25% 0%, rgba(91,217,255,.16), transparent 60%),
+               radial-gradient(ellipse at 85% 25%, rgba(138,255,193,.10), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-inner { position:relative; padding:72px 24px 64px; max-width:960px; margin:0 auto;
+                display:flex; gap:32px; align-items:center; flex-wrap:wrap; }
+  .hero-icon { width:128px; height:128px; border-radius:22%; flex:none; display:block;
+               box-shadow:0 10px 40px rgba(91,217,255,.22); }
+  .hero-copy { flex:1 1 380px; min-width:280px; }
+  .eyebrow { color:var(--accent); font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; margin:0 0 12px; }
+  h1 { font-size:clamp(2rem,5.4vw,3.1rem); line-height:1.1; margin:0 0 14px; letter-spacing:-.02em; }
+  .lede { font-size:clamp(1.02rem,2.1vw,1.18rem); color:var(--dim); max-width:54ch; margin:0 0 24px; }
+
+  .cta { display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+         background:var(--accent); color:#04121a; font-weight:650; font-size:1rem;
+         padding:12px 22px; border-radius:10px; border:1px solid rgba(91,217,255,.5);
+         transition:transform .12s ease, box-shadow .12s ease; }
+  .cta:hover { transform:translateY(-1px); box-shadow:0 8px 26px rgba(91,217,255,.28); }
+  .cta.soon { background:transparent; color:var(--accent2); cursor:default;
+              border:1px solid rgba(138,255,193,.4); font-weight:600; }
+  .cta.soon:hover { transform:none; box-shadow:none; }
+  .meta { margin:16px 0 0; color:var(--dim); font-size:.9rem; }
+
+  /* sections */
+  section { padding:64px 0; border-bottom:1px solid var(--line); }
+  h2 { font-size:1.5rem; margin:0 0 8px; letter-spacing:-.01em; }
+  .sub { color:var(--dim); margin:0 0 30px; }
+
+  /* shots */
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  .shots figure { margin:0; }
+  .shots img { width:100%; height:auto; display:block; border-radius:10px;
+               border:1px solid var(--line); background:#000; }
+  .shots figcaption { color:var(--dim); font-size:.85rem; margin-top:8px; }
+
+  /* feature grid */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .card h3 { margin:0 0 6px; font-size:1rem; color:var(--accent); }
+  .card p { margin:0; color:var(--dim); font-size:.95rem; }
+
+  /* facts table */
+  .facts { width:100%; border-collapse:collapse; font-size:.95rem; }
+  .facts th, .facts td { text-align:left; padding:11px 0; border-bottom:1px solid var(--line);
+                         vertical-align:top; }
+  .facts th { color:var(--dim); font-weight:500; width:40%; }
+  .facts tr:last-child th, .facts tr:last-child td { border-bottom:none; }
+
+  .pill { display:inline-block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+          color:var(--accent2); border:1px solid rgba(138,255,193,.35);
+          border-radius:999px; padding:3px 11px; }
+
+  footer { padding:40px 0 64px; color:var(--dim); font-size:.9rem; }
+  .footlinks { display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
+
+  @media (max-width:560px) {
+    .nav ul { gap:14px; }
+    .hero-inner { padding:52px 24px 48px; gap:22px; }
+    .hero-icon { width:96px; height:96px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="logo.svg" alt="" class="crest-sm">THE NORTH <span>WATCH</span></a>
+    <ul>
+      <li><a href="index.html#games">Games</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+</header>
+
+<img src="media/st-hero.jpg" alt="Space Trails key art — a rocket carving a glowing trail through an asteroid field" class="keyart">
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="spacetrails.png" alt="Space Trails app icon" class="hero-icon">
+    <div class="hero-copy">
+      <p class="eyebrow">Coming soon · iPhone &amp; iPad</p>
+      <h1>Space Trails: Snake Arena</h1>
+      <p class="lede">A snake game with rockets. Every crystal you collect makes your trail longer —
+        and your trail is just as deadly to you as it is to everyone else.</p>
+      <span class="cta soon">Coming soon to the App Store</span>
+      <p class="meta">Free · In-app purchases · Rated 9+ · iPhone and iPad</p>
+    </div>
+  </div>
+</div>
+
+<section id="shots">
+  <div class="wrap">
+    <h2>Screenshots</h2>
+    <p class="sub">Captured in-game on iPhone.</p>
+    <div class="shots">
+      <figure>
+        <img src="media/st-1.png" alt="Space Trails main menu with Launch Rocket and Play Together buttons" loading="lazy">
+        <figcaption>One button to play, one to fill the arena with your friends.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/st-2.png" alt="A rocket trailing energy through a field of yellow crystals" loading="lazy">
+        <figcaption>Collect the crystals. The trail behind you is the price.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/st-3.png" alt="Play Together panel listing games found on the local network" loading="lazy">
+        <figcaption>One player hosts, everyone else is found automatically on the same Wi-Fi.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/st-4.png" alt="Game over screen offering a free continue for watching an ad" loading="lazy">
+        <figcaption>Crashed? Watch a short ad and pick the same run back up.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="about-game">
+  <div class="wrap">
+    <h2>What it is</h2>
+    <p class="sub">Classic snake rules, rebuilt in 3D and played at speed.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>One thumb, no buttons</h3>
+        <p>Drag anywhere on the screen to steer. That is the whole control scheme. Your rocket
+           never stops moving, so every turn is a commitment.</p>
+      </div>
+      <div class="card">
+        <h3>Your own tail kills you</h3>
+        <p>Every crystal makes the trail behind you longer. Grow far enough and the arena starts
+           to feel small for reasons that are entirely your fault.</p>
+      </div>
+      <div class="card">
+        <h3>Ten rival rockets</h3>
+        <p>Each one drags its own lethal trail across your path, and none of them are looking
+           where you are going.</p>
+      </div>
+      <div class="card">
+        <h3>The arena moves</h3>
+        <p>The safe zone opens up as you survive, pushing you outward into more traffic and more
+           rock. Long runs get more dangerous, not less.</p>
+      </div>
+      <div class="card">
+        <h3>Play together on Wi-Fi</h3>
+        <p>Up to six players in one arena over local Wi-Fi. No internet connection, no accounts,
+           no lobbies — just people in the same room fighting for the same crystals.</p>
+      </div>
+      <div class="card">
+        <h3>Nothing to sign up for</h3>
+        <p>No account, no energy timer, no sync. Open it and play. Your best score lives on your
+           own device.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lan">
+  <div class="wrap">
+    <h2>Offline LAN mode</h2>
+    <p class="sub">Six rockets, one room, no server.</p>
+    <p style="max-width:62ch; color:var(--dim); margin:0;">
+      One person taps <strong>HOST A GAME</strong> and everyone else on the same Wi-Fi finds it
+      automatically — or types the host's code if the network is being difficult. There is no
+      server in the middle, which is why it works with the internet switched off entirely. Crash
+      in multiplayer and you respawn in a couple of seconds, so nobody sits out watching.
+    </p>
+  </div>
+</section>
+
+<section id="details">
+  <div class="wrap">
+    <h2>Details</h2>
+    <p class="sub">The practical stuff.</p>
+    <table class="facts">
+      <tr><th>Platform</th><td>iPhone and iPad<br><span class="pill" style="margin-top:8px">Android coming soon</span></td></tr>
+      <tr><th>Price</th><td>Free to play</td></tr>
+      <tr><th>In-app purchases</th><td>Remove All Ads ($2.99, one-time) · Extra Continue ($0.49)</td></tr>
+      <tr><th>Age rating</th><td>9+</td></tr>
+      <tr><th>Genre</th><td>Action · Casual · Snake / arena survival</td></tr>
+      <tr><th>Multiplayer</th><td>Up to 6 players over local Wi-Fi</td></tr>
+      <tr><th>Leaderboard</th><td>Game Center high scores</td></tr>
+      <tr><th>Developer</th><td>The North Watch, Slovenia</td></tr>
+      <tr><th>Support</th><td><a href="support.html">Support page</a> · <a href="privacy.html">Privacy policy</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="press">
+  <div class="wrap">
+    <h2>Press</h2>
+    <p class="sub">Screenshots and key art on this page are free to use in coverage of the game.</p>
+    <p style="margin:0;"><a href="mailto:support@thenorthwatch.eu">support@thenorthwatch.eu</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footlinks">
+      <a href="index.html">Studio</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:support@thenorthwatch.eu">Email</a>
+    </div>
+    © 2026 The North Watch — Slovenia
+  </div>
+</footer>
+
+</body>
+</html>
