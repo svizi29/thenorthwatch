@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Space Tanks Mayhem — The North Watch</title>
-<meta name="description" content="Arena survival tank combat across alien battlefields. Endless waves, a full arsenal, and environments that fall apart around you. Free on the App Store.">
+<title>Space Tanks Mayhem — LAN co-op tank shooter — The North Watch</title>
+<meta name="description" content="LAN co-op and versus for up to 4 players on the same wifi — no internet needed. Arena survival tank combat across five alien battlefields. Free on the App Store.">
 <meta property="og:title" content="Space Tanks Mayhem">
-<meta property="og:description" content="Arena survival tank combat across alien battlefields. Free on the App Store.">
+<meta property="og:description" content="LAN co-op and versus for up to 4 players on one wifi. No internet, no accounts. Free on the App Store.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://thenorthwatch.eu/media/stm-1.png">
+<meta property="og:image" content="https://thenorthwatch.eu/media/stm-lan-game.png">
 <link rel="icon" href="logo.svg">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -67,6 +67,13 @@
   h2 { font-size:1.5rem; margin:0 0 8px; letter-spacing:-.01em; }
   .sub { color:var(--dim); margin:0 0 30px; }
 
+  .lan-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; }
+  .lan-grid figure { margin:0; }
+  .lan-grid img { width:100%; height:auto; display:block; border-radius:10px;
+                  border:1px solid rgba(138,255,193,.28); background:#000;
+                  box-shadow:0 8px 34px rgba(0,0,0,.5); }
+  .lan-grid figcaption { color:var(--dim); font-size:.88rem; margin-top:8px; }
+
   /* shots */
   .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
   .shots figure { margin:0; }
@@ -107,6 +114,7 @@
   <nav class="nav">
     <a class="brand" href="index.html"><img src="logo.svg" alt="" class="crest-sm">THE NORTH <span>WATCH</span></a>
     <ul>
+      <li><a href="#lan">LAN Co-op</a></li>
       <li><a href="index.html#games">Games</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="support.html">Support</a></li>
@@ -121,12 +129,55 @@
       <p class="eyebrow">Out now · iPhone &amp; iPad</p>
       <h1>Space Tanks Mayhem</h1>
       <p class="lede">The battalion has been hacked. You are the last tank still taking orders from a
-        human. Hold the line across five alien battlefields, one wave at a time.</p>
+        human. Hold the line across five alien battlefields — alone, or with friends on the same wifi.</p>
+      <p style="margin:0 0 20px; font-size:.95rem; letter-spacing:.02em;">
+        <span class="pill" style="color:#8affc1; border-color:rgba(138,255,193,.45);">LAN CO-OP &amp; VERSUS</span>
+        <span class="pill" style="margin-left:8px;">NO INTERNET NEEDED</span>
+      </p>
       <a class="cta" href="https://apps.apple.com/app/id6756101193">Download free on the App Store</a>
       <p class="meta">Free · In-app purchases · Rated 9+ · Requires iOS 15 or later</p>
     </div>
   </div>
 </div>
+
+<section id="lan">
+  <div class="wrap">
+    <h2>Play together on one wifi</h2>
+    <p class="sub">No internet. No accounts. No sign-up.</p>
+
+    <div class="lan-grid">
+      <figure>
+        <img src="media/stm-lan-lobby.png" alt="LAN lobby listing a nearby game to join" loading="lazy">
+        <figcaption>One phone hosts. Everyone else sees the game appear and taps to join.</figcaption>
+      </figure>
+      <figure>
+        <img src="media/stm-lan-game.png" alt="Two players fighting the same wave in LAN co-op" loading="lazy">
+        <figcaption>Two tanks, one arena, the same wave — the blue tank is a second player.</figcaption>
+      </figure>
+    </div>
+
+    <div class="grid" style="margin-top:26px;">
+      <div class="card">
+        <h3>Up to 4 players</h3>
+        <p>One session, everyone on the same wifi. Only the host sets it up — joining a friend is
+           always free.</p>
+      </div>
+      <div class="card">
+        <h3>Co-op</h3>
+        <p>Take on the waves together. If you go down, your squad fights on and you respawn.</p>
+      </div>
+      <div class="card">
+        <h3>Versus</h3>
+        <p>Free-for-all. No bots, no waves — just the arena and whoever else is in it.</p>
+      </div>
+      <div class="card">
+        <h3>Genuinely offline</h3>
+        <p>Nothing is routed through a server. A plane, a cabin, a bad hotel connection — it all
+           works exactly the same.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="shots">
   <div class="wrap">
@@ -191,7 +242,11 @@
       </div>
       <div class="card">
         <h3>No account, no waiting</h3>
-        <p>Open it and play. Nothing to sign up for, nothing to sync, no energy timer.</p>
+        <p>Open it and play. Nothing to sign up for, nothing to sync.</p>
+      </div>
+      <div class="card">
+        <h3>Leaderboard</h3>
+        <p>Game Center ranking for waves survived, so there is always a number to beat.</p>
       </div>
     </div>
   </div>
@@ -218,6 +273,7 @@
       <tr><th>Price</th><td>Free to play</td></tr>
       <tr><th>In-app purchases</th><td>Remove Ads ($2.99, one-time) · Revive Instantly ($0.49)</td></tr>
       <tr><th>Age rating</th><td>9+</td></tr>
+      <tr><th>Players</th><td>1 solo · up to 4 over local wifi (LAN co-op or versus)</td></tr>
       <tr><th>Genre</th><td>Action · Arcade · Arena survival</td></tr>
       <tr><th>Developer</th><td>The North Watch, Slovenia</td></tr>
       <tr><th>Support</th><td><a href="support.html">Support page</a> · <a href="privacy.html">Privacy policy</a></td></tr>
