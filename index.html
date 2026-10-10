@@ -1,185 +1,251 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-site="tnw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The North Watch — Indie Game Studio</title>
-<meta name="description" content="The North Watch is an independent game studio from Slovenia, making small, sharp games for mobile — including Space Tanks Mayhem, with LAN co-op for up to 4 players.">
-<meta property="og:title" content="The North Watch — Indie Game Studio">
-<meta property="og:description" content="An independent game studio from Slovenia, making small, sharp games for mobile.">
+<title>The North Watch</title>
+<meta name="description" content="The North Watch makes Rabbit Hole, Northlight, Iceberg, Borealis, AirTouch and games for phones. Slovenia.">
+<meta name="theme-color" content="#0a0e14">
+<link rel="canonical" href="https://thenorthwatch.eu/">
+<link rel="icon" href="nw/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="nw/img/apple-touch-icon-180.png">
+<meta property="og:title" content="The North Watch">
+<meta property="og:description" content="Tools and games, made carefully. Rabbit Hole, Northlight, Iceberg, Borealis, AirTouch and games for phones.">
 <meta property="og:type" content="website">
-<link rel="icon" href="logo.svg">
-<style>
-  *, *::before, *::after { box-sizing: border-box; }
-  :root {
-    --bg:#070b10; --panel:#0e161f; --line:#1c2836;
-    --ink:#e8eef5; --dim:#8fa0b3; --accent:#5bd9ff; --accent2:#8affc1;
-  }
-  html { scroll-behavior:smooth; }
-  body {
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.65; -webkit-font-smoothing:antialiased;
-  }
-  a { color:var(--accent); }
-  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
-
-  /* header */
-  header { position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
-           background:rgba(7,11,16,.78); border-bottom:1px solid var(--line); }
-  .nav { display:flex; align-items:center; justify-content:space-between; gap:16px;
-         max-width:960px; margin:0 auto; padding:14px 24px; }
-  .brand { font-weight:700; letter-spacing:.02em; text-decoration:none; color:var(--ink);
-           display:flex; align-items:center; gap:10px; }
-  .brand span { color:var(--accent); }
-  .crest-sm { height:30px; width:auto; display:block; }
-  .crest-hero { width:132px; height:auto; display:block; margin-bottom:26px;
-                filter:drop-shadow(0 6px 26px rgba(91,217,255,.28)); }
-  .nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.95rem; }
-  .nav a { text-decoration:none; color:var(--dim); }
-  .nav a:hover { color:var(--ink); }
-
-  /* hero */
-  .hero { position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
-  .hero::before {
-    content:""; position:absolute; inset:-40% -20% auto -20%; height:120%;
-    background:radial-gradient(ellipse at 30% 0%, rgba(91,217,255,.16), transparent 60%),
-               radial-gradient(ellipse at 80% 20%, rgba(138,255,193,.10), transparent 55%);
-    pointer-events:none;
-  }
-  .hero-inner { position:relative; padding:96px 24px 84px; max-width:960px; margin:0 auto; }
-  .eyebrow { color:var(--accent); font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; margin:0 0 14px; }
-  h1 { font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.1; margin:0 0 18px; letter-spacing:-.02em; }
-  .lede { font-size:clamp(1.05rem,2.2vw,1.25rem); color:var(--dim); max-width:52ch; margin:0; }
-
-  /* sections */
-  section { padding:72px 0; border-bottom:1px solid var(--line); }
-  h2 { font-size:1.5rem; margin:0 0 8px; letter-spacing:-.01em; }
-  .sub { color:var(--dim); margin:0 0 32px; }
-
-  /* games */
-  .game { display:flex; gap:24px; align-items:flex-start; background:var(--panel);
-          border:1px solid var(--line); border-radius:14px; padding:22px;
-          text-decoration:none; color:inherit; transition:border-color .15s ease, transform .15s ease; }
-  a.game:hover { border-color:rgba(91,217,255,.45); transform:translateY(-2px); }
-  .game h3 { color:var(--ink); }
-  .game img { width:104px; height:104px; border-radius:22%; flex:none; display:block;
-              box-shadow:0 8px 30px rgba(91,217,255,.18); }
-  .game h3 { margin:0 0 6px; font-size:1.2rem; }
-  .game p { margin:0 0 12px; color:var(--dim); }
-  .pill { display:inline-block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
-          color:var(--accent2); border:1px solid rgba(138,255,193,.35);
-          border-radius:999px; padding:3px 11px; }
-
-  /* about grid */
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
-  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
-  .card h3 { margin:0 0 6px; font-size:1rem; color:var(--accent); }
-  .card p { margin:0; color:var(--dim); font-size:.95rem; }
-
-  footer { padding:40px 0 64px; color:var(--dim); font-size:.9rem; }
-  .footlinks { display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
-
-  @media (max-width:560px) {
-    .nav ul { gap:14px; }
-    .game { flex-direction:column; }
-    .game img { width:84px; height:84px; }
-  }
-</style>
+<meta property="og:url" content="https://thenorthwatch.eu/">
+<meta property="og:image" content="https://thenorthwatch.eu/nw/img/tnw-hero-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" type="image/webp" imagesrcset="nw/img/tnw-hero-960.webp 960w, nw/img/tnw-hero-1600.webp 1600w, nw/img/tnw-hero-2400.webp 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="nw/nw.css">
+<script src="nw/nw.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#projects">Skip to the projects</a>
 
-<header>
-  <nav class="nav">
-    <a class="brand" href="index.html"><img src="logo.svg" alt="" class="crest-sm">THE NORTH <span>WATCH</span></a>
-    <ul>
-      <li><a href="#games">Games</a></li>
-      <li><a href="space-tanks-mayhem.html">Space Tanks</a></li>
-      <li><a href="snake-arena.html">Snake Arena</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="support.html">Support</a></li>
-    </ul>
-  </nav>
+<nav class="strip" aria-label="The North Watch family">
+  <div class="wrap">
+    <a href="./" aria-current="page">The North Watch</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="https://rabbit-hole.video">Rabbit Hole</a>
+  </div>
+</nav>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="logo-h" src="nw/img/tnw-logo-h-320.webp" srcset="nw/img/tnw-logo-h-320.webp 1x, nw/img/tnw-logo-h-640.webp 2x" alt="The North Watch" width="110" height="52"></a>
+    <nav class="nav" aria-label="Primary">
+      <a class="opt" href="#projects">Projects</a>
+      <a class="opt" href="#games">Games</a>
+      <a class="opt" href="#contact">Contact</a>
+      <a class="btn btn--ghost btn--sm" href="support.html">Support</a>
+    </nav>
+  </div>
 </header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <img src="logo.svg" alt="The North Watch crest" class="crest-hero">
-    <p class="eyebrow">Independent game studio · Slovenia</p>
-    <h1>Small games,<br>made carefully.</h1>
-    <p class="lede">The North Watch is a one-person studio building sharp, self-contained games for
-      mobile — the kind you can pick up for three minutes and still think about later.</p>
-  </div>
-</div>
-
-<section id="games">
-  <div class="wrap">
-    <h2>Games</h2>
-    <p class="sub">What we're shipping, and what's next.</p>
-
-    <a class="game" href="space-tanks-mayhem.html">
-      <img src="spacetanks.png" alt="Space Tanks Mayhem icon">
-      <div>
-        <h3>Space Tanks Mayhem</h3>
-        <p>Arena survival tank combat across alien battlefields. Endless waves, a full arsenal,
-           and environments that fall apart around you.</p>
-        <p style="margin:0 0 12px; color:var(--accent2); font-size:.95rem;">
-           New: LAN co-op &amp; versus — up to 4 players on one wifi, no internet needed.</p>
-        <span class="pill">Out now on the App Store</span>
-      </div>
-    </a>
-
-    <a class="game" href="snake-arena.html" style="margin-top:18px">
-      <img src="spacetrails.png" alt="Snake Arena icon">
-      <div>
-        <h3>Snake Arena</h3>
-        <p>A snake game with rockets. Grow your trail, dodge everything, and fill the arena with
-           up to six players over local Wi-Fi.</p>
-        <span class="pill">Coming soon</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <h2>About</h2>
-    <p class="sub">A small studio with a narrow focus.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Independent</h3>
-        <p>Self-funded and self-published, based in Cerklje na Gorenjskem, Slovenia.</p>
-      </div>
-      <div class="card">
-        <h3>Mobile first</h3>
-        <p>Built for phones and tablets — short sessions, one-hand controls, no account required.</p>
-      </div>
-      <div class="card">
-        <h3>Fair by default</h3>
-        <p>Ads keep the games free, and a single purchase removes them for good. No dark patterns.</p>
+<main>
+  <section class="hero" style="--hero-focus-mobile: 66% center">
+    <picture>
+      <source type="image/webp" srcset="nw/img/tnw-hero-960.webp 960w, nw/img/tnw-hero-1600.webp 1600w, nw/img/tnw-hero-2400.webp 2400w" sizes="100vw">
+      <img src="nw/img/tnw-hero-1600.jpg" alt="A lone watchtower on a ridge under one bright star, above a mountain lake at night" width="1600" height="679" fetchpriority="high">
+    </picture>
+    <div class="wrap">
+      <span class="eyebrow">Studio · Slovenia</span>
+      <h1 class="display">Tools and games, made carefully.</h1>
+      <div class="actions">
+        <a class="btn btn--primary" href="#projects">See the projects</a>
+        <a class="btn btn--ghost btn--on-image" href="https://rabbit-hole.video">Rabbit Hole
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="wrap">
-    <h2>Contact</h2>
-    <p class="sub">Press, feedback, or a bug to report — all welcome.</p>
-    <p><a href="mailto:support@thenorthwatch.eu">support@thenorthwatch.eu</a></p>
-  </div>
-</section>
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <span id="about"></span>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="h2" id="projects-title">Projects</h2>
+        <p class="lead">What we are building, and where each one stands.</p>
+      </div>
+      <div class="cards">
+        <a class="card card--wide reveal" href="https://rabbit-hole.video">
+          <div class="card__media">
+            <picture>
+              <source type="image/webp" srcset="nw/img/rabbit-hole-800.webp 800w, nw/img/rabbit-hole-1600.webp 1600w" sizes="(min-width: 900px) 62vw, 100vw">
+              <img src="nw/img/rabbit-hole-1600.jpg" alt="A white rabbit at the edge of a glowing hole that spirals down into film frames" width="1600" height="679" loading="lazy">
+            </picture>
+          </div>
+          <div class="card__body">
+            <span class="eyebrow">For studios</span>
+            <h3 class="card__title"><img src="nw/img/app-rabbithole-128.webp" srcset="nw/img/app-rabbithole-128.webp 1x, nw/img/app-rabbithole-256.webp 2x" alt="" width="40" height="40">Rabbit Hole</h3>
+            <p>The AI production studio for your desktop. Edit, generate, direct and localise video in one app.</p>
+            <div class="card__foot"><span class="pill pill--accent">2.0 · in use</span><span class="go">rabbit-hole.video ↗</span></div>
+          </div>
+        </a>
+      </div>
 
-<footer>
+      <div class="group-head reveal">
+        <span class="eyebrow">For everyone · one library</span>
+        <p class="muted">Photo, video and AI, sharing one library on your own cloud drive.</p>
+      </div>
+      <div class="cards cards--3">
+          <article class="card reveal">
+            <div class="card__media">
+              <picture>
+                <source type="image/webp" srcset="nw/img/northlight-640.webp 640w, nw/img/northlight-1280.webp 1280w" sizes="(min-width: 1040px) 33vw, (min-width: 720px) 50vw, 100vw">
+                <img src="nw/img/northlight-1280.jpg" alt="Northern lights over a still mountain lake, a camera on a tripod at the shore" width="1280" height="853" loading="lazy">
+              </picture>
+              <span class="pill pill--on-image">In development</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><img src="nw/img/app-northlight-128.webp" srcset="nw/img/app-northlight-128.webp 1x, nw/img/app-northlight-256.webp 2x" alt="" width="40" height="40">Northlight</h3>
+              <p>A photo editor for everyone, with AI where it saves time.</p>
+              <div class="card__foot"><span>Mac · iPhone · iPad</span></div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <picture>
+                <source type="image/webp" srcset="nw/img/iceberg-art-640.webp 640w, nw/img/iceberg-art-1280.webp 1280w" sizes="(min-width: 1040px) 33vw, (min-width: 720px) 50vw, 100vw">
+                <img src="nw/img/iceberg-art-1280.jpg" alt="An iceberg at the waterline: a small tip above, a vast glowing mass below" width="1280" height="853" loading="lazy">
+              </picture>
+              <span class="pill pill--on-image">In development</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><img src="nw/img/app-iceberg-128.webp" srcset="nw/img/app-iceberg-128.webp 1x, nw/img/app-iceberg-256.webp 2x" alt="" width="40" height="40">Iceberg</h3>
+              <p>Video for people who hate editing. You shoot, it cuts; you nudge the last bit.</p>
+              <div class="card__foot"><span>Mac · iPhone · iPad</span></div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <picture>
+                <source type="image/webp" srcset="nw/img/borealis-art-640.webp 640w, nw/img/borealis-art-1280.webp 1280w" sizes="(min-width: 1040px) 33vw, (min-width: 720px) 50vw, 100vw">
+                <img src="nw/img/borealis-art-1280.jpg" alt="A warm aurora over a mountain lake, picture frames taking shape in its light" width="1280" height="853" loading="lazy">
+              </picture>
+              <span class="pill pill--on-image">In development</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><img src="nw/img/app-borealis-128.webp" srcset="nw/img/app-borealis-128.webp 1x, nw/img/app-borealis-256.webp 2x" alt="" width="40" height="40">Borealis</h3>
+              <p>Every AI model in one simple app, with an endless canvas to build on.</p>
+              <div class="card__foot"><span>Mac · iPhone · iPad</span></div>
+            </div>
+          </article>
+      </div>
+
+      <div class="group-head reveal">
+        <span class="eyebrow">Tools</span>
+      </div>
+      <div class="cards">
+          <article class="card reveal">
+            <div class="card__media">
+              <picture>
+                <source type="image/webp" srcset="nw/img/airtouch-640.webp 640w, nw/img/airtouch-1280.webp 1280w" sizes="(min-width: 1040px) 33vw, (min-width: 720px) 50vw, 100vw">
+                <img src="nw/img/airtouch-1280.jpg" alt="A hand in the air in front of a laptop, its fingertips leaving blue light trails" width="1280" height="853" loading="lazy">
+              </picture>
+              <span class="pill pill--on-image">In development</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><img src="nw/img/app-airtouch-128.webp" srcset="nw/img/app-airtouch-128.webp 1x, nw/img/app-airtouch-256.webp 2x" alt="" width="40" height="40">AirTouch</h3>
+              <p>Your hands are the mouse. Point, click, drag and scroll through the webcam.</p>
+              <div class="card__foot"><span>Open source · macOS · Windows</span></div>
+            </div>
+          </article>
+          <div class="card card--dashed reveal">
+            <div class="card__body" style="justify-content: center; align-items: flex-start; gap: var(--s3)">
+              <span aria-hidden="true" style="display: inline-flex; width: 44px; height: 44px; border-radius: 12px; border: 1px dashed var(--faint); align-items: center; justify-content: center; color: var(--muted)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              <h3 class="h3">Next on the watch</h3>
+              <p>New projects show up here first.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="games" aria-labelledby="games-title" style="padding-top: 0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="h2" id="games-title">Games</h2>
+        <p class="lead">Small and sharp, for phones. Play together on one Wi‑Fi.</p>
+      </div>
+      <div class="cards">
+        <a class="card reveal" href="space-tanks-mayhem.html">
+          <div class="card__media">
+            <img src="media/stm-1.png" alt="Space Tanks Mayhem: tanks fighting in an alien arena" width="1000" height="460" loading="lazy">
+            <span class="pill pill--on-image">Out now · App Store</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title"><img src="spacetanks.png" alt="" width="36" height="36">Space Tanks Mayhem</h3>
+            <p>Arena tank combat across alien worlds. LAN co-op for up to four.</p>
+          </div>
+        </a>
+        <a class="card reveal" href="snake-arena.html">
+          <div class="card__media">
+            <img src="media/st-hero.jpg" alt="Snake Arena: glowing trails and rockets in a neon arena" width="1600" height="900" loading="lazy">
+            <span class="pill pill--on-image">Coming soon</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title"><img src="spacetrails.png" alt="" width="36" height="36">Snake Arena</h3>
+            <p>A snake game with rockets. Up to six players on one Wi‑Fi.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="section-head reveal" style="margin-top: var(--s8); margin-bottom: var(--s5)">
+        <span class="eyebrow">Also on the watch · Martian Bull</span>
+      </div>
+      <div class="cards">
+        <a class="card reveal" href="http://martianbull.com">
+          <div class="card__media">
+            <picture>
+              <source type="image/webp" srcset="nw/img/martian-bull-800.webp 800w, nw/img/martian-bull-1280.webp 1280w" sizes="(min-width: 720px) 50vw, 100vw">
+              <img src="nw/img/martian-bull-1280.jpg" alt="A bull charging across red Martian sand under a huge red planet" width="1280" height="720" loading="lazy">
+            </picture>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Martian Bull</h3>
+            <p>A game studio for fast multiplayer worlds where ancient stone carries modern fire.</p>
+            <div class="card__foot"><span>Unreal Engine 5 · mobile</span><span class="go">martianbull.com ↗</span></div>
+          </div>
+        </a>
+        <a class="card reveal" href="http://avetemorituri.com">
+          <div class="card__media">
+            <picture>
+              <source type="image/webp" srcset="nw/img/avete-morituri-640.webp 640w, nw/img/avete-morituri-1280.webp 1280w" sizes="(min-width: 720px) 50vw, 100vw">
+              <img src="nw/img/avete-morituri-1280.jpg" alt="A vast futuristic Roman arena seen from the stands" width="1280" height="717" loading="lazy">
+            </picture>
+            <span class="pill pill--on-image">In development</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title"><img src="nw/img/am-emblem-128.webp" alt="" width="36" height="36">Avete Morituri</h3>
+            <p>A gladiator arena shooter in a Rome five thousand years from now.</p>
+            <div class="card__foot"><span>iOS first · Android next</span><span class="go">avetemorituri.com ↗</span></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="band" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div>
+        <h2 class="h3" id="contact-title">Contact</h2>
+        <p class="muted">Press, feedback, or a bug to report.</p>
+      </div>
+      <a class="h2" href="mailto:support@thenorthwatch.eu" style="font-size: clamp(22px, 3vw, 32px)">support@thenorthwatch.eu</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
   <div class="wrap">
-    <div class="footlinks">
+    <div class="brandline"><img src="nw/img/seal.svg" alt="" width="26" height="32">© 2026 The North Watch · Slovenia</div>
+    <nav class="links" aria-label="Footer">
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="mailto:support@thenorthwatch.eu">Email</a>
-    </div>
-    © 2026 The North Watch — Slovenia
+      <a href="https://rabbit-hole.video">Rabbit Hole</a>
+    </nav>
   </div>
 </footer>
-
 </body>
 </html>
