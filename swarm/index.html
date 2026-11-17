@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-site="sw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swarm — an AI crew that builds for very little</title>
+<meta name="description" content="Swarm is a Mac app where you chat with a Boss that plans the work and writes the tests, and a crew of low-cost AI models builds it. Early version, with your own OpenRouter key.">
+<meta name="theme-color" content="#070b07">
+<link rel="canonical" href="https://thenorthwatch.eu/swarm/">
+<link rel="icon" href="../nw/img/app-swarm-256.png" type="image/png">
+<link rel="apple-touch-icon" href="../nw/img/app-swarm-256.png">
+<meta property="og:title" content="Swarm">
+<meta property="og:description" content="An AI crew that builds for very little. You chat with the Boss; low-cost models do the building. Early version for Mac.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thenorthwatch.eu/swarm/">
+<meta property="og:image" content="https://thenorthwatch.eu/nw/img/swarm-hero-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../nw/nw.css">
+<script src="../nw/nw.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#download">Skip to the download</a>
+
+<nav class="strip" aria-label="The North Watch family">
+  <div class="wrap">
+    <a href="../">The North Watch</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="./" aria-current="page">Swarm</a>
+  </div>
+</nav>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="app-icon" src="../nw/img/app-swarm-128.webp" srcset="../nw/img/app-swarm-128.webp 1x, ../nw/img/app-swarm-256.webp 2x" alt="" width="34" height="34"><span class="wordmark">Swarm</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a class="opt" href="#features">What it does</a>
+      <a class="opt" href="#download">Download</a>
+      <span class="pill pill--accent">Early · 0.1.0</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="--hero-focus-mobile: 78% center">
+    <picture><source type="image/webp" srcset="../nw/img/swarm-hero-960.webp 960w, ../nw/img/swarm-hero-1600.webp 1600w, ../nw/img/swarm-hero-2400.webp 2400w" sizes="100vw"><img src="../nw/img/swarm-hero-1600.jpg" alt="Fireflies over dark hills at night, a line of them rising towards one bright light" width="1600" height="1067" fetchpriority="high"></picture>
+    <div class="wrap">
+      <span class="eyebrow">AI crew · a North Watch app</span>
+      <h1 class="display">An AI crew that builds for very little.</h1>
+      <p class="lead">You chat with the Boss. It plans the work and writes the tests; a crew of low-cost models builds until the tests pass.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="https://github.com/svizi29/swarm-releases/releases/latest/download/Swarm.dmg" data-goatcounter-click="download/swarm-0.1.0-mac" data-goatcounter-title="Swarm 0.1.0 Mac download">Download for Mac</a>
+        <a class="btn btn--ghost btn--on-image" href="#features">What it does</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="section-head reveal"><h2 class="h2" id="features-title">What it does</h2></div>
+      <div class="facts reveal">
+        <div class="fact"><span class="v">One chat, a whole crew</span><p>Tell the Boss what you want. It splits the job into small tasks and hands them out.</p></div>
+        <div class="fact"><span class="v">Tests decide</span><p>The Boss writes the tests first. A task is done when they pass, not when a model says so.</p></div>
+        <div class="fact"><span class="v">Cheap first</span><p>Low-cost models do the building. A task that keeps failing moves up to a stronger model, and Swarm asks before it uses the expensive one.</p></div>
+        <div class="fact"><span class="v">Every cent shown</span><p>Each model call is logged with its real cost, next to what the same job would cost on one big model.</p></div>
+        <div class="fact"><span class="v">Your code stays put</span><p>On an existing project the crew works on a copy and a separate branch. Swarm never merges or pushes.</p></div>
+        <div class="fact"><span class="v">Reports, not walls of text</span><p>Each finished job comes back as a short report: what was asked, what was done, what it cost.</p></div>
+        <div class="fact"><span class="v">Works with Claude</span><p>Claude Desktop and Claude Code can hand work to the crew and get a short summary back.</p></div>
+        <div class="fact"><span class="v">Voice</span><p>Dictate a request and hear the answer in a sentence or two.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="band-title">
+    <div class="wrap">
+      <div style="display: flex; flex-direction: column; gap: 8px; max-width: 62ch">
+        <h2 class="h3" id="band-title">Bring your own key</h2>
+        <p class="muted">Swarm has no account and no key inside. You paste your own OpenRouter key on first launch; it is kept in the macOS Keychain and you pay OpenRouter directly for what the models use.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="download" aria-labelledby="download-title">
+    <div class="wrap">
+      <div class="tier tier--pro reveal" style="gap: var(--s5)">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span class="eyebrow">Version 0.1.0 · early</span>
+          <h2 class="h2" id="download-title">Get Swarm for Mac</h2>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--s4)"><a class="btn btn--primary" href="https://github.com/svizi29/swarm-releases/releases/latest/download/Swarm.dmg" data-goatcounter-click="download/swarm-0.1.0-mac" data-goatcounter-title="Swarm 0.1.0 Mac download">Download for Mac</a><span class="muted" style="font: 500 13px/1.3 var(--font-mono)">Swarm.dmg · 5.1 MB</span></div>
+        <div class="tiers" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+          <div style="display: flex; flex-direction: column; gap: 8px"><h3 style="font: 700 18px/1.25 var(--font-display); background: none; color: var(--ink)">It needs</h3><ul class="ticks"><li><span>macOS 13 Ventura or later</span></li><li><span>A Mac with Apple silicon</span></li><li><span><a href="https://nodejs.org">Node.js</a> 24 or later, installed first</span></li><li><span>Your own <a href="https://openrouter.ai">OpenRouter</a> key</span></li></ul></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><h3 style="font: 700 18px/1.25 var(--font-display); background: none; color: var(--ink)">First steps</h3><ul class="ticks"><li><span>Open Swarm.dmg and drag Swarm to Applications.</span></li><li><span>Open Swarm, go to Settings and paste your OpenRouter key.</span></li><li><span>Type what you want built and press Send.</span></li></ul></div>
+        </div>
+        <p class="muted">Everything runs on your Mac. Your requests go only to the models you pick, through your own key. The app is signed and notarized by Apple.</p>
+        <p class="muted" style="font: 500 12px/1.5 var(--font-mono); overflow-wrap: anywhere">SHA-256 0B0EB27E835899553A55B5BCC35E48F4B31667AEE8B4DF31270C247ABF550FB3</p>
+      </div>
+      <p class="muted reveal" style="margin-top: var(--s5)">Windows version in the works.</p>
+    </div>
+  </section>
+
+  <section class="section" id="status" aria-labelledby="status-title" style="padding-top: 0">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="status-title" style="margin-bottom: var(--s6)">Where it stands</h2>
+      <div class="facts reveal">
+        <div class="fact"><span class="k">Status</span><span class="v">Early · 0.1.0</span><p>It works and is used daily, but expect rough edges.</p></div>
+        <div class="fact"><span class="k">Platforms</span><span class="v">macOS 13+</span><p>Apple silicon. Windows is being built.</p></div>
+        <div class="fact"><span class="k">Made by</span><span class="v">The North Watch</span><p><a href="../">thenorthwatch.eu</a> · Slovenia · <a href="mailto:support@thenorthwatch.eu">support@thenorthwatch.eu</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brandline"><img src="../nw/img/app-swarm-128.webp" alt="" width="28" height="28" style="border-radius: 22.5%">© 2026 The North Watch · Swarm</div>
+    <a class="byline" href="../"><img src="../nw/img/seal.svg" alt="" width="20" height="25">A North Watch app</a>
+  </div>
+</footer>
+</body>
+</html>
